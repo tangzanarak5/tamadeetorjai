@@ -62,9 +62,9 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
 
   if (messageText) {
-    if (messageText === 'hello') {
-      sendTextMessage(senderID, "ควยเอ้ย ไม่รู้ request");
-    }
+    // if (messageText === 'hello') {
+    //   sendTextMessage(senderID, "ควยเอ้ย ไม่รู้ request");
+    // }
 
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
@@ -72,6 +72,10 @@ function receivedMessage(event) {
       case 'generic':
         sendGenericMessage(senderID);
         break;
+
+        case 'hello':
+          sendTextMessage(senderID, "ควยเอ้ย ไม่รู้ request");
+          break;
 
       default:
         sendTextMessage(senderID, messageText);
